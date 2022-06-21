@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/nav.css">
+    <link rel="stylesheet" href="./css/loader.css">
+    <link rel="stylesheet" href="./css/radio-register.css">
+
+    <title>radio register data</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            direction: rtl;
+        }
+
+        .container {
+            margin: 15px;
+            display: flex;
+            justify-content: space-around;
+            min-height: 500px;
+        }
+
+        .right {
+            width: 25%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .title {
+            text-align: center;
+            padding: 20px;
+            background-color: #ddd;
+            color: #333;
+            border-radius: 5px;
+            cursor: pointer;
+            user-select: none;
+            margin-bottom: 15px;
+        }
+
+        .left {
+            width: 72%;
+            background-color: #ebf5ff;
+            ;
+            color: #333;
+            font-family: Arial, Helvetica, sans-serif;
+            position: relative;
+        }
+
+        .select_data_showing {
+            transform: translateY(100px);
+            text-align: center;
+            z-index: 9999;
+        }
+
+        .select_data_showing h1 {
+            color: #ee5c94;
+            margin: 35px auto;
+        }
+
+        .select_data_showing p {
+            color: #ee5c94;
+            margin: 35px;
+        }
+
+        .result_data_showing {
+            display: none;
+            z-index: 99;
+            text-align: center;
+            padding-top: 50%;
+            transform: translateY(-50%);
+            color: #ee5c94;
+        }
+
+        div {
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="loader-wrapper">
+        <div id="loader">
+            <div class="loader-bg">
+                <h3>Loading...</h3>
+                <div class="loader">
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+    </div>
+    <div id="content">
+        <header>
+            <nav>
+                <a href="./index.html" class="logo">
+                    <img src="./images/Test/covid-19_diagnosis.png" alt="covid-19 diagnosis-logo">
+                </a>
+                <ul>
+                    <li style="position: relative; margin:auto 30px">
+                        <div>
+                            <div class="icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="23" height="25" viewBox="0 0 18 20"
+                                    fill="none" data-uw-styling-context="true">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M9 18.5C13.4183 18.5 17 14.9183 17 10.5C17 6.08172 13.4183 2.5 9 2.5C4.58172 2.5 1 6.08172 1 10.5C1 14.9183 4.58172 18.5 9 18.5Z"
+                                        stroke="#0C9890" stroke-width="1" data-uw-styling-context="true"></path>
+                                    <path d="M9.40234 14.8945V13.7402H8.24805V14.8945H9.40234Z" fill="#0C9890"
+                                        data-uw-styling-context="true"></path>
+                                    <path d="M9.40234 12.3945V5.24023H8.24805V12.3945H9.40234Z" fill="#0C9890"
+                                        data-uw-styling-context="true"></path>
+                                </svg>
+                            </div>
+                            <div class="toggle-data">
+                                <ul>
+                                    <li>
+                                        <a href="./faq.html">الاسئلة الشائعة</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">تواصل معنا</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="button">
+                        <a href="./login.html">تسجيل حساب جديد</a>
+                    </li>
+                    <li class="lang">
+                        <button>engilsh</button>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+    <main>
+        <div class="container">
+            <div class="right">
+                <div class="title" id="select_data">فحص حالة جديدة </div>
+                <div class="title" id="show_result">النتائج والبيانات </div>
+            </div>
+            <div class="left" id="data">
+                <div class="select_data_showing">
+                    <h1> قم باضافة صورة للاشعة</h1>
+                    <p>عن طريق اضافة الاشاعه فانه سوف يتم تحديد حالتك فى اسرع وقت وسوف تظهر النتيجة الخاصة بك فى قسم
+                        النتاائج </p>
+                    <div class="select_container">
+                        <label for="file-upload" class="custom-file-upload">اختيار الملفات</label>
+                        <input id="file-upload" type="file" accept="image/*" multiple />
+                    </div>
+                </div>
+                <div class="result_data_showing">
+                    سوف تعرض النتائج هنا
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <footer>
+        <div>
+            <a href="./index.html" class="logo"><img src="./images/Test/covid-19_diagnosis.png"
+                    alt="covid-19 diagnosis-logo"></a>
+        </div>
+        <div>
+            <p>Devloped by Culture and Science City Team </p>
+            <p>all right reserved for covid-19_diagnosis. team &copy;2022</p>
+        </div>
+    </footer>
+    </div>
+    <script src="./js/jquery.js"></script>
+    <script src="./js/loader.js"></script>
+    <script src="./js/script.js "></script>
+    <script src="./js/redio_register.js"></script>
+</body>
+
+</html>

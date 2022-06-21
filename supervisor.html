@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/all.min.css">
+  <link rel="stylesheet" href="./css/nav.css">
+  <link rel="stylesheet" href="./css/loader.css">
+  <link rel="stylesheet" href="./css/register.css">
+  <link rel="stylesheet" href="./css/supervisor.css">
+  <title>supervisor</title>
+</head>
+
+<body style="background-color: #f5f5f5;">
+  <div id="loader-wrapper">
+    <div id="loader">
+        <div class="loader-bg">
+            <h3>Loading...</h3>
+            <div class="loader">
+                <span></span>
+            </div>
+        </div>
+    </div>
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+</div>
+<div id="content">
+    <header>
+        <nav>
+            <a href="./index.html" class="logo"><img src="./images/Test/covid-19_diagnosis.png"
+                    alt="covid-19 diagnosis-logo"></a>
+            <ul>
+                <li style="position: relative; margin:auto 30px">
+                    <div>
+                        <div class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="23" height="25" viewBox="0 0 18 20"
+                                fill="none" data-uw-styling-context="true">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M9 18.5C13.4183 18.5 17 14.9183 17 10.5C17 6.08172 13.4183 2.5 9 2.5C4.58172 2.5 1 6.08172 1 10.5C1 14.9183 4.58172 18.5 9 18.5Z"
+                                    stroke="#0C9890" stroke-width="1" data-uw-styling-context="true"></path>
+                                <path d="M9.40234 14.8945V13.7402H8.24805V14.8945H9.40234Z" fill="#0C9890"
+                                    data-uw-styling-context="true"></path>
+                                <path d="M9.40234 12.3945V5.24023H8.24805V12.3945H9.40234Z" fill="#0C9890"
+                                    data-uw-styling-context="true"></path>
+                            </svg>
+                        </div>
+                        <div class="toggle-data">
+                            <ul>
+                                <li>
+                                    <a href="./faq.html">الاسئلة الشائعة</a>
+                                </li>
+                                <li><a href="#">تواصل معنا</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="button"><a href="./login.html">تسجيل الدخول</a></li>                </ul>
+        </nav>
+    </header>
+  <main style="width: 60%;min-height: 100vh; margin: 30px auto;">
+    <button id="add_new_user" style="width: 100%; height: 60px; border-radius: 5px;">اضافة مسنخدم جديد</button>
+    <form action="add" id="form">
+      <div class="part-1">
+        <section class="contain-half">
+          <div class="sec-part">
+            <label for="username">اسم المستخدم</label>
+            <br />
+            <i class="fa-solid fa-user" id="reg_icon"></i>
+            <input type="text" name="username" id="username" class="username w-90">
+          </div>
+          <div class="sec-part">
+            <label for="password">كلمة السر</label>
+            <br />
+            <i class="fa-solid fa-lock" id="reg_icon"></i>
+            <input type="password" name="password" id="password" class="password w-90" />
+          </div>
+        </section>
+        <section class="contain-half">
+          <div class="sec-part">
+            <label for="date_of_birth">تاريخ الميلاد</label>
+            <br />
+            <i class="fa-solid fa-calendar" id="reg_icon"></i>
+            <input type="date" mask="00/00/0000" value="2000-10-01" min="1950-01-01" max="2023-01-01"
+              name="date_of_birth" id="date_of_birth" class="DOB w-90" start="1999" />
+          </div>
+          <div class="sec-part">
+            <label for="job">الوظيفة</label>
+            <br />
+            <i class="fa-solid fa-user-doctor" id="reg_icon"></i>
+            <input type="text" name="job" id="job" class="job w-90" />
+          </div>
+        </section>
+        <section class="contain-half">
+          <div class="sec-part">
+            <label for="name" style="transform: translateX(-5%);">النوع</label><br />
+            <div>
+              <input type="radio" name="gender" id="male" value="male" />
+              <label for="male">ذكر</label>
+              <input type="radio" name="gender" id="female" value="female" />
+              <label for="female">انثي</label>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div class="sec-part">
+            <label for="single">الحالة الاجتماعية </label><br />
+            <div>
+              <input type="radio" name="social-status" id="maried" value="maried" />
+              <label for="maried">متزوج</label>
+              <input type="radio" name="social-status" id="single" value="single" />
+              <label for="single">اعزب</label>
+              <input type="radio" name="social-status" id="other" value="other" aria-selected="true" />
+              <label for="other">غير ذلك </label>
+            </div>
+          </div>
+        </section>
+
+        <section class="contain-half">
+          <div class="sec-part">
+            <label for="phone">رقم الهاتف </label>
+            <br>
+            <i class="fa-solid fa-mobile-retro" id="reg_icon"></i>
+            <input type="tel" placeholder="123456789" pattern="[0-9]{9}" name="phone" value="" id="phone"
+              class="phone w-70" />
+            <input lang="en" type="text" name="phone" value="+20" id="phone" class="phone w-20" readonly />
+          </div>
+          <div class="sec-part sec-kids-opt">
+            <label for="nkids">عدد الاولاد</label>
+            <br>
+            <i class="fa-solid fa-children" id="reg_icon"></i>
+            <input type="number" min="0" name="nkids" pattern="[0-20]{1}" max="20" id="nkids" class="nkids w-90" />
+          </div>
+        </section>
+        <section class="contain-half">
+          <div class="sec-part">
+            <label for="email">البريد الالكتروني</label>
+            <br>
+            <i class="fa-solid fa-envelope" id="reg_icon"></i>
+            <input type="email" name="email" id="email" class="email w-90" />
+          </div>
+          <div class="sec-part">
+            <label for="address_2">العنوان</label>
+            <br>
+            <i class="fa-solid fa-location-pin" id="reg_icon"></i>
+            <input type="text" name="address_2" value="" id="address_2" class="address_2 w-50" />
+            <select name="city" id="city">
+              <option value="cairo">المحافظة</option>
+              <option value="damnhor"> القاهرة</option>
+              <option value="cairo">الجيزة </option>
+              <option value="cairo">الأسكندرية</option>
+              <option value="cairo">الدقهلية</option>
+              <option value="cairo">الشرقية</option>
+              <option value="cairo">البحيرة</option>
+              <option value="cairo">المنوفية</option>
+              <option value="cairo">القليوبية</option>
+              <option value="cairo">الغربية</option>
+              <option value="cairo">بور سعيد</option>
+              <option value="cairo">دمياط</option>
+              <option value="cairo">الإسماعلية</option>
+              <option value="cairo">السويس</option>
+              <option value="cairo">كفر الشيخ</option>
+              <option value="cairo">الفيوم</option>
+              <option value="cairo">بني سويف</option>
+              <option value="cairo">مطروح</option>
+              <option value="cairo">شمال سيناء</option>
+              <option value="cairo">جنوب سيناء</option>
+              <option value="cairo">المنيا</option>
+              <option value="cairo">أسيوط</option>
+              <option value="cairo">سوهاج</option>
+              <option value="cairo">قنا</option>
+              <option value="cairo">البحر الأحمر</option>
+              <option value="cairo">الأقصر</option>
+              <option value="cairo">أسوان</option>
+              <option value="cairo">الواحات</option>
+              <option value="cairo">الوادي الجديد</option>
+            </select>
+          </div>
+        </section>
+        <section class="contain-half">
+          <div class="sec-part">
+            <label for="ID">الرقم القومي </label>
+            <br>
+            <i class="fa-solid fa-id-card" id="reg_icon"></i>
+            <input type="text" name="ID" pattern="[0-9]{14}" placeholder="12345678912345" id="ID" class="ID w-90" />
+          </div>
+          <div class="sec-part">
+            <label>الاحداثيات</label>
+            <br>
+            <i class="fa-solid fa-arrows-to-circle" id="reg_icon"></i>
+            <input type="text" name="cordinats" id="cordinats" class="cordinats w-90" readonly />
+          </div>
+        </section>
+        <section class="contain-half">
+
+          <div class="sec-part">
+            <label for="cordinats">نوع اللقاح </label>
+            <br>
+            <i class="fa-solid fa-shield-virus" id="reg_icon"></i>
+            <select name="vaccination" id="vaccination" class="w-90">
+              <option value="phaizer">اسم اللقاح </option>
+              <option value="phaizer">فايزر</option>
+              <option value="2">أسترازينيكا</option>
+              <option value="3">سينوفارم</option>
+              <option value="4">سبوتنيك</option>
+              <option value="4">جونسون</option>
+              <option value="4">مودرنا</option>
+            </select>
+          </div>
+          <div class="sec-part">
+            <label for="cordinats">صلاحيات المستخدم</label>
+            <br>
+            <i class="fa-solid fa-shield-virus" id="reg_icon"></i>
+            <select name="roles" id="roles" class="w-90">
+              <option value="supervisor">مسئول</option>
+              <option value="radiologist">مراقب ومضيف اشعة</option>
+              <option value="doctor">دكتور</option>
+              <option value="patient" selected>مريض</option>
+              <option value="Paramedic">مسعف</option>
+            </select>
+          </div>
+        </section>
+        <input type="button" value="تسجيل" class="btn" id="register">
+      </div>
+    </form>
+
+
+
+
+    <br>
+    <input type="button" value="البحث عن مسنخدم " id="search_button">
+    <div style="direction: rtl; height: 0; overflow: hidden; transition: all 200ms ease;" id="search_box" class="toggle_search_box">
+      <input type="text" id="mobile_number" placeholder="رقم الهاتف" style="
+      display: inline-block;
+      width: 45%;
+      height: 54px;
+      border-radius: 5px;
+      margin: 10px 10px;
+      padding: 0 15px;
+      outline: none;
+      font-size: 22px;
+    ">
+      <input type="text" id="social_status_number" placeholder="الرقم القومي" style="
+        display: inline-block;
+        width: 45%;
+        height: 54px;
+        border-radius: 5px;
+        margin: 10px 10px;
+        padding: 0 15px;
+        outline: none;
+        font-size: 22px;
+      ">
+      <select name="city search" id="city_search" style="
+                  display: inline-block;
+                  width: 45%;
+                  height: 54px;
+                  border-radius: 5px;
+                  margin: 10px 10px;
+                  padding: 0 15px;
+                  outline: none;
+                  font-size: 22px;
+                ">
+        <option value="cairo">المحافظة</option>
+        <option value="damnhor"> القاهرة</option>
+        <option value="cairo">الجيزة </option>
+        <option value="cairo">الأسكندرية</option>
+        <option value="cairo">الدقهلية</option>
+        <option value="cairo">الشرقية</option>
+        <option value="cairo">البحيرة</option>
+        <option value="cairo">المنوفية</option>
+        <option value="cairo">القليوبية</option>
+        <option value="cairo">الغربية</option>
+        <option value="cairo">بور سعيد</option>
+        <option value="cairo">دمياط</option>
+        <option value="cairo">الإسماعلية</option>
+        <option value="cairo">السويس</option>
+        <option value="cairo">كفر الشيخ</option>
+        <option value="cairo">الفيوم</option>
+        <option value="cairo">بني سويف</option>
+        <option value="cairo">مطروح</option>
+        <option value="cairo">شمال سيناء</option>
+        <option value="cairo">جنوب سيناء</option>
+        <option value="cairo">المنيا</option>
+        <option value="cairo">أسيوط</option>
+        <option value="cairo">سوهاج</option>
+        <option value="cairo">قنا</option>
+        <option value="cairo">البحر الأحمر</option>
+        <option value="cairo">الأقصر</option>
+        <option value="cairo">أسوان</option>
+        <option value="cairo">الواحات</option>
+        <option value="cairo">الوادي الجديد</option>
+      </select>
+
+
+      <select name="vaccination search" id="vaccination_search" style="
+display: inline-block;
+width: 45%;
+height: 54px;
+border-radius: 5px;
+margin: 10px 10px;
+padding: 0 15px;
+outline: none;
+font-size: 22px;
+">
+
+<option value="phaizer">اسم اللقاح </option>
+<option value="phaizer">فايزر</option>
+<option value="2">أسترازينيكا</option>
+<option value="3">سينوفارم</option>
+<option value="4">سبوتنيك</option>
+<option value="4">جونسون</option>
+<option value="4">مودرنا</option>      </select>
+      <select name="social status" id="social_status" style="
+display: inline-block;
+width: 45%;
+height: 54px;
+border-radius: 5px;
+margin: 10px 10px;
+padding: 0 15px;
+outline: none;
+font-size: 22px;
+">
+        <option value="maried">متزوج</option>
+        <option value="single">اعزب</option>
+        <option value="other">غيرذلك</option>
+      </select>
+
+      <select name="kind" id="kind_search" style="
+display: inline-block;
+width: 45%;
+height: 54px;
+border-radius: 5px;
+margin: 10px 10px;
+padding: 0 15px;
+outline: none;
+font-size: 22px;
+">
+        <option value="M">ذكر</option>
+        <option value="F">انثي</option>
+      </select>
+
+      <input type="button" id="show_search" value="عرض النتائج" style="
+  display: inline-block;
+  width: 100%;
+  height: 54px;
+  border-radius: 5px;
+  margin: 10px 0;
+  padding: 0 15px;
+  outline: none;
+  font-size: 22px;
+  border: 0.2px solid #fff;
+">
+      <div class="specific_search_result">
+        <p>hello</p>
+        <p>hello</p>
+        <p>hello</p>
+        <p>hello</p>
+        <p>hello</p>
+        <p>hello</p>
+        <p>hello</p>
+        <p>hello</p>
+        <p>hello</p>
+        <p>hello</p>
+        <p>hello</p>
+        <p>hello</p>
+        <p>hello</p>
+        <p>hello</p>
+      </div>
+    </div>
+    <br>
+    <input type="button" value="عرض جميع المستخدمين" id="show_all_users"
+      style="width: 100%; height: 60px; border-radius: 5px; cursor: pointer;">
+    <div class="user" id="user">
+      <div class="header" id="users">
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div>
+        <a href="./index.html" class="logo"><img src="./images/Test/covid-19_diagnosis.png"
+                alt="covid-19 diagnosis-logo"></a>
+    </div>
+    <div>
+        <p>Devloped by Culture and Science City Team </p>
+        <p>all right reserved for covid-19_diagnosis. team &copy;2022</p>
+    </div>
+</footer>
+</main>
+
+  <script src="./js/jquery.js"></script>
+  <script src="./js/all.min.js"></script>
+  <script src="./js/loader.js"></script>
+  <script src="./js/supervisor.js"></script>
+</body>
+
+</html>
